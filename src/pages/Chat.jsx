@@ -1,7 +1,7 @@
 import Topbar from "../components/Topbar";
-import TaskList from "../components/TaskList";
 import { tasks } from "../data/mockData";
 import Footer from "../components/Footer";
+import Conversation from "../components/Coversation";
 
 export default function Chat({ onMenuClick }) {
   return (
@@ -12,7 +12,7 @@ export default function Chat({ onMenuClick }) {
         actionLabel="New Task"
         onMenuClick={onMenuClick}
       />
-      <TaskList tasks={tasks} />
+      <Conversation />
       <Footer />
     </>
   );
