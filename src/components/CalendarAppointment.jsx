@@ -11,7 +11,7 @@ const DAYS = [
 ];
 const WEEKDAYS = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 const LONG_WEEKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-const VIEWS = ["Month", "Week", "Day", "List"];
+const VIEWS = ["Month", "Week"];
 const PICKER_WEEKDAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
@@ -155,7 +155,7 @@ function DateField({ id, label, borderClass, ringClass }) {
 
   return (
     <div>
-      <label htmlFor={id} className="text-sm text-slate-500">{label}</label>
+      <label htmlFor={id} className="text-sm text-slate-500 dark:text-slate-300">{label}</label>
       <div ref={pickerRef} className="relative mt-1">
         <button
           id={id}
@@ -163,9 +163,9 @@ function DateField({ id, label, borderClass, ringClass }) {
           aria-haspopup="dialog"
           aria-expanded={isOpen}
           onClick={() => isOpen ? setIsOpen(false) : openPicker()}
-          className={`relative flex h-10 w-full items-center rounded border bg-white px-4 pr-11 text-left focus:outline-none focus:ring-2 ${borderClass} ${ringClass}`}
+          className={`relative flex h-10 w-full items-center rounded border bg-white px-4 pr-11 text-left focus:outline-none focus:ring-2 dark:border-slate-700 dark:bg-slate-950 ${borderClass} ${ringClass}`}
         >
-          <span className={formattedValue ? "text-slate-900" : "text-gray-400"}>
+          <span className={formattedValue ? "text-slate-900 dark:text-slate-100" : "text-gray-400 dark:text-slate-400"}>
             {formattedValue || "Date"}
           </span>
           <CalendarIcon />
@@ -175,14 +175,14 @@ function DateField({ id, label, borderClass, ringClass }) {
           <div
             role="dialog"
             aria-label={`${label} date picker`}
-            className="absolute right-0 top-full z-50 mt-1 w-[285px] rounded-md border border-slate-300 bg-white p-4 text-slate-900 shadow-xl"
+            className="absolute right-0 top-full z-50 mt-1 w-[285px] rounded-md border border-slate-300 bg-white p-4 text-slate-900 shadow-xl dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
           >
             <div className="flex gap-2">
               <select
                 aria-label="Month"
                 value={viewDate.getMonth()}
                 onChange={(event) => setViewDate((date) => new Date(date.getFullYear(), Number(event.target.value), 1))}
-                className="min-w-0 flex-1 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="min-w-0 flex-1 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-slate-600 dark:bg-slate-950 dark:text-slate-100"
               >
                 {MONTHS.map((month, index) => <option key={month} value={index}>{month}</option>)}
               </select>
@@ -190,13 +190,13 @@ function DateField({ id, label, borderClass, ringClass }) {
                 aria-label="Year"
                 value={viewDate.getFullYear()}
                 onChange={(event) => setViewDate((date) => new Date(Number(event.target.value), date.getMonth(), 1))}
-                className="w-[84px] rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-[84px] rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-slate-600 dark:bg-slate-950 dark:text-slate-100"
               >
                 {YEARS.map((year) => <option key={year} value={year}>{year}</option>)}
               </select>
             </div>
 
-            <div className="mt-3 grid grid-cols-7 text-center text-sm text-slate-500">
+            <div className="mt-3 grid grid-cols-7 text-center text-sm text-slate-500 dark:text-slate-400">
               {PICKER_WEEKDAYS.map((day) => <span key={day} className="py-1">{day}</span>)}
             </div>
 
@@ -217,8 +217,8 @@ function DateField({ id, label, borderClass, ringClass }) {
                       isSelected
                         ? "bg-[#022658] text-white"
                         : isCurrentMonth
-                          ? "text-slate-900 hover:bg-slate-100"
-                          : "text-slate-400 hover:bg-slate-100"
+                          ? "text-slate-900 hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-800"
+                          : "text-slate-400 hover:bg-slate-100 dark:text-slate-500 dark:hover:bg-slate-800"
                     }`}
                   >
                     {date.getDate()}
@@ -227,11 +227,11 @@ function DateField({ id, label, borderClass, ringClass }) {
               })}
             </div>
 
-            <div className="mt-3 flex justify-end gap-2 border-t border-slate-200 pt-3">
+            <div className="mt-3 flex justify-end gap-2 border-t border-slate-200 pt-3 dark:border-slate-700">
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="rounded-md border border-slate-300 px-2.5 py-1.5 text-sm hover:bg-slate-50"
+                className="rounded-md border border-slate-300 px-2.5 py-1.5 text-sm hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
               >
                 Cancel
               </button>
@@ -296,13 +296,13 @@ export default function CalendarAppointment( ) {
   }, [scheduleIndex]);
 
   return (
-    <div className="mx-auto space-y-6">
+    <div className="mx-auto space-y-6 dark:bg-slate-950 dark:text-slate-100">
       {/* Calendar card */}
-      <section className="rounded-3xl bg-white p-4 sm:p-5">
+      <section className="rounded-3xl bg-white p-4 shadow-card dark:bg-slate-900 dark:text-slate-100 sm:p-5">
         <div className="flex flex-wrap items-center justify-between gap-3 px-1 pb-6 pt-1">
-          <h1 className="text-xl font-semibold">September 2026</h1>
+          <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100">September 2026</h1>
           <div
-            className="flex rounded-lg bg-gray-100 p-0.5 text-sm"
+            className="flex rounded-lg bg-gray-100 p-0.5 text-sm dark:bg-slate-800"
             role="tablist"
             aria-label="Calendar view"
           >
@@ -315,8 +315,8 @@ export default function CalendarAppointment( ) {
                 onClick={() => setView(v)}
                 className={
                   view === v
-                    ? "rounded-lg border border-slate-200 bg-white px-4 py-2 font-medium text-slate-900 shadow-sm"
-                    : "px-4 py-2 text-slate-500 hover:text-slate-900"
+                    ? "rounded-lg border border-slate-200 bg-white px-4 py-2 font-medium text-slate-900 shadow-sm dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                    : "px-4 py-2 text-slate-500 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
                 }
               >
                 {v}
@@ -326,10 +326,10 @@ export default function CalendarAppointment( ) {
         </div>
 
         <div className="overflow-x-auto">
-          <div className="min-w-[640px] border border-slate-200">
-            <div className="grid grid-cols-7 bg-gray-50 text-sm text-slate-500">
+          <div className="min-w-[640px] border border-slate-200 dark:border-slate-700">
+            <div className="grid grid-cols-7 bg-gray-50 text-sm text-slate-500 dark:bg-slate-800 dark:text-slate-300">
               {WEEKDAYS.map((d, i) => (
-                <div key={d} className={`px-3 py-2 ${i ? "border-l border-slate-200" : ""}`}>
+                <div key={d} className={`px-3 py-2 ${i ? "border-l border-slate-200 dark:border-slate-700" : ""}`}>
                   {d}
                 </div>
               ))}
@@ -340,8 +340,8 @@ export default function CalendarAppointment( ) {
                 const isHoliday = i === HOLIDAY;
                 const isSelected = i === selected;
                 const state = [
-                  isHoliday ? "bg-[#D3AF34] text-white" : isSelected ? "bg-blue-50" : "",
-                  isSelected ? "ring-2 ring-inset ring-blue-600" : "",
+                  isHoliday ? "bg-[#D3AF34] text-white" : isSelected ? "bg-blue-50 dark:bg-sky-500/10" : "dark:bg-slate-900",
+                  isSelected ? "ring-2 ring-inset ring-blue-600 dark:ring-sky-400" : "",
                 ].filter(Boolean).join(" ");
 
                 return (
@@ -355,13 +355,13 @@ export default function CalendarAppointment( ) {
                       setScheduleIndex(i);
                       setIsAddingTask(false);
                     }}
-                    className={`relative flex h-[125px] cursor-pointer flex-col justify-between border-t border-slate-200 p-3 text-left transition-colors hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
-                      i % 7 ? "border-l border-slate-200" : ""
+                    className={`relative flex h-[125px] cursor-pointer flex-col justify-between border-t border-slate-200 p-3 text-left transition-colors hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:border-slate-700 dark:text-slate-100 ${
+                      i % 7 ? "border-l border-slate-200 dark:border-l dark:border-slate-700" : ""
                     } ${state}`}
                   >
                     <span
                       className={`text-2xl font-medium leading-none ${
-                        DIMMED.has(i) ? "text-gray-500" : ""
+                        DIMMED.has(i) ? "text-gray-500 dark:text-slate-500" : "dark:text-slate-100"
                       }`}
                     >
                       {day}
@@ -400,14 +400,14 @@ export default function CalendarAppointment( ) {
             role="dialog"
             aria-modal="true"
             aria-labelledby="day-schedule-title"
-            className="w-full max-w-[350px] rounded-sm bg-white p-5 shadow-xl"
+            className="w-full max-w-[450px] rounded-sm bg-white p-5 shadow-xl dark:bg-slate-900 dark:text-slate-100"
           >
             <div className="flex items-start justify-between">
               <div>
-                <h2 id="day-schedule-title" className="text-base font-semibold text-slate-900">
+                <h2 id="day-schedule-title" className="text-base font-semibold text-slate-900 dark:text-slate-100">
                   Day Schedule
                 </h2>
-                <p className="mt-1 text-xs text-slate-500">{getCalendarDateLabel(scheduleIndex)}</p>
+                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{getCalendarDateLabel(scheduleIndex)}</p>
               </div>
               <button
                 type="button"
@@ -416,7 +416,7 @@ export default function CalendarAppointment( ) {
                   setScheduleIndex(null);
                   setIsAddingTask(false);
                 }}
-                className="-mr-1 -mt-1 rounded p-1 text-slate-400 hover:text-slate-700"
+                className="-mr-1 -mt-1 rounded p-1 text-slate-400 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
               >
                 <X size={16} />
               </button>
@@ -439,7 +439,7 @@ export default function CalendarAppointment( ) {
                       </div>
                     ))
                   ) : (
-                    <p className="rounded-sm border border-slate-200 bg-slate-50 px-3 py-4 text-sm text-slate-500">
+                    <p className="rounded-sm border border-slate-200 bg-slate-50 px-3 py-4 text-sm text-slate-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
                       No tasks scheduled for this day.
                     </p>
                   )}
@@ -450,12 +450,19 @@ export default function CalendarAppointment( ) {
                     onClick={() => setIsAddingTask(true)}
                     className="rounded-sm bg-[#022658] px-6 py-1 text-sm font-medium text-[#D3AF34] hover:opacity-90"
                   >
+                    Agency Appointment
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setIsAddingTask(true)}
+                    className="rounded-sm bg-[#022658] px-6 py-1 text-sm font-medium text-[#D3AF34] hover:opacity-90"
+                  >
                     Add Task
                   </button>
                   <button
                     type="button"
                     onClick={() => setScheduleIndex(null)}
-                    className="rounded-sm border border-slate-200 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50"
+                    className="rounded-sm border border-slate-200 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
                   >
                     Close
                   </button>
@@ -476,30 +483,30 @@ export default function CalendarAppointment( ) {
                   setIsAddingTask(false);
                 }}
               >
-                <label className="block text-xs font-medium text-slate-600">
+                <label className="block text-xs font-medium text-slate-600 dark:text-slate-300">
                   Task name
                   <input
                     autoFocus
                     required
                     value={taskTitle}
                     onChange={(event) => setTaskTitle(event.target.value)}
-                    className="mt-1 h-9 w-full rounded-sm border border-slate-300 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="mt-1 h-9 w-full rounded-sm border border-slate-300 bg-white px-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-slate-600 dark:bg-slate-950 dark:text-slate-100"
                   />
                 </label>
-                <label className="block text-xs font-medium text-slate-600">
+                <label className="block text-xs font-medium text-slate-600 dark:text-slate-300">
                   Time
                   <input
                     type="time"
                     value={taskTime}
                     onChange={(event) => setTaskTime(event.target.value)}
-                    className="mt-1 h-9 w-full rounded-sm border border-slate-300 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="mt-1 h-9 w-full rounded-sm border border-slate-300 bg-white px-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-slate-600 dark:bg-slate-950 dark:text-slate-100"
                   />
                 </label>
                 <div className="flex justify-end gap-2 pt-1">
                   <button
                     type="button"
                     onClick={() => setIsAddingTask(false)}
-                    className="rounded-sm border border-slate-200 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50"
+                    className="rounded-sm border border-slate-200 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
                   >
                     Cancel
                   </button>
@@ -515,43 +522,9 @@ export default function CalendarAppointment( ) {
           </section>
         </div>
       )}
-
-      {/* Create appointments card */}
-      <section className="rounded-3xl bg-white p-6 sm:p-8">
-        <h2 className="text-base font-semibold">Create Appointments</h2>
-
-        <div className="mt-6 grid gap-x-6 gap-y-4 md:grid-cols-2">
-          <DateField
-            id="agency-date"
-            label="Agency Appointment"
-            borderClass="border-emerald-500"
-            ringClass="focus:ring-emerald-500/30"
-          />
-          <TimeSelect id="agency-time" />
-
-          <DateField
-            id="kids-date"
-            label="Kids Appointment"
-            borderClass="border-orange-500"
-            ringClass="focus:ring-orange-500/30"
-          />
-          <TimeSelect id="kids-time" />
-
-          <div className="md:col-span-2">
-            <label htmlFor="notes" className="text-sm text-slate-500">Notes</label>
-            <textarea
-              id="notes"
-              rows={3}
-              placeholder="Add notes about customer"
-              className="mt-1 w-full resize-none rounded border border-slate-200 px-4 py-2 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
-            />
-          </div>
-        </div>
-
-        <div className="mt-8 flex justify-end">
+      <div className="mt-8 flex justify-end">
           <button type="submit" className="rounded-md bg-[#022658] px-8 py-3 text-base font-medium text-[#D3AF34] hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2">Save</button>
         </div>
-      </section>
     </div>
   );
 }

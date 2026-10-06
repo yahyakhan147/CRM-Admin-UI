@@ -157,19 +157,19 @@ function StageCard({ stage, active, onClick }) {
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`min-w-[6rem] flex-1 rounded-xl border p-1.5 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-navy ${stage.card} ${
-        active ? "border-2 border-blue-500 shadow-[0_0_8px_2px_rgba(14,165,233,0.45)]" : "hover:brightness-95"
+      className={`min-w-[6rem] flex-1 rounded-xl border p-1.5 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-navy dark:border-slate-700 dark:bg-slate-800/80 ${stage.card} ${
+        active ? "border-2 border-blue-500 shadow-[0_0_8px_2px_rgba(14,165,233,0.45)] dark:border-sky-400 dark:shadow-[0_0_10px_2px_rgba(56,189,248,0.35)]" : "hover:brightness-95 dark:hover:brightness-110"
       }`}
     >
       <div className="flex items-center gap-3">
         <span className={`flex h-10 w-10 items-center justify-center rounded-full text-white ${stage.circle}`}>
           <Icon className="h-5 w-5" strokeWidth={2} />
         </span>
-        <span className="text-base font-semibold text-ink">{stage.count}</span>
+        <span className="text-base font-semibold text-ink dark:text-slate-100">{stage.count}</span>
       </div>
-      <div className="mt-2 flex items-center justify-between rounded-md bg-white/70 px-2 py-1 text-[10px] text-muted">
+      <div className="mt-2 flex items-center justify-between rounded-md bg-white/70 px-2 py-1 text-[10px] text-muted dark:bg-slate-700/60 dark:text-slate-200">
         <span className="truncate">{stage.label}</span>
-        <CornerUpRight className="h-3.5 w-3.5 shrink-0 text-ink" />
+        <CornerUpRight className="h-3.5 w-3.5 shrink-0 text-ink dark:text-slate-100" />
       </div>
     </button>
   );
@@ -177,7 +177,7 @@ function StageCard({ stage, active, onClick }) {
 
 function LeadCard({ lead, stage }) {
   return (
-    <article className="grid items-start gap-4 rounded-lg border border-line bg-white p-5 transition hover:bg-neutral-100 md:grid-cols-[auto_minmax(0,3fr)_minmax(0,2fr)]">
+    <article className="grid items-start gap-4 rounded-lg border border-line bg-white p-5 transition hover:bg-neutral-100 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-800/90 md:grid-cols-[auto_minmax(0,3fr)_minmax(0,2fr)]">
       <div
         className={`flex h-[72px] w-[72px] rounded-lg items-center justify-center text-2xl font-medium text-white ${lead.avatar}`}
         aria-hidden="true"
@@ -186,8 +186,8 @@ function LeadCard({ lead, stage }) {
       </div>
 
       <div className="min-w-0">
-        <h3 className="text-xl font-medium text-ink">{lead.name}</h3>
-        <div className=" text-[#79747E] mt-1 flex flex-wrap items-center gap-2 text-sm">
+        <h3 className="text-xl font-medium text-ink dark:text-slate-100">{lead.name}</h3>
+        <div className="mt-1 flex flex-wrap items-center gap-2 text-sm text-[#79747E] dark:text-slate-300">
           <span className="flex items-center gap-1.5">
             <Phone className="h-4 w-4" />
             {lead.phone}
@@ -201,7 +201,7 @@ function LeadCard({ lead, stage }) {
             {lead.owner}
           </span>
         </div>
-        <p className="mt-2 flex items-center text-[#79747E] gap-1.5 text-sm text-muted">
+        <p className="mt-2 flex items-center gap-1.5 text-sm text-[#79747E] text-muted dark:text-slate-400">
           <CircleChevronDown className="h-4 w-4" />
           {lead.pipeline}
         </p>
@@ -215,7 +215,7 @@ function LeadCard({ lead, stage }) {
       ) : (
         <button
           type="button"
-          className="justify-self-start rounded-full border border-dashed border-gray-400 px-5 py-1.5 text-sm text-gray-500 hover:bg-white hover:text-ink md:justify-self-end md:self-center"
+          className="justify-self-start rounded-full border border-dashed border-gray-400 px-5 py-1.5 text-sm text-gray-500 hover:bg-white hover:text-ink dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 md:justify-self-end md:self-center"
         >
           Request assignment
         </button>
@@ -232,7 +232,7 @@ export default function InterestedLeads() {
   const activeLeads = LEADS_BY_STAGE[activeStage];
 
   return (
-    <div className="mx-auto rounded-3xl bg-white lg:p-2 font-sans sm:p-6">
+    <div className="mx-auto rounded-3xl bg-white lg:p-2 font-sans sm:p-6 dark:bg-slate-900 dark:text-slate-100">
       {/* Stage tabs */}
       <div className="flex gap-2 overflow-x-auto p-1 pb-4" role="tablist" aria-label="Pipeline stages">
         {STAGES.map((s) => (
@@ -244,11 +244,11 @@ export default function InterestedLeads() {
           />
         ))}
       </div>
-      <hr className="border-line/70" />
+      <hr className="border-line/70 dark:border-slate-700" />
 
       {/* Toolbar */}
       <div className="flex flex-wrap items-center justify-between gap-3 py-5">
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted text-[#707EAE]">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted text-[#707EAE] dark:text-slate-300">
           <span className="flex items-center gap-1.5">
             <Users className="h-4 w-4" />
             {activeLeads.length} Leads
@@ -266,7 +266,7 @@ export default function InterestedLeads() {
         </div>
         <button
           type="button"
-          className="flex items-center gap-2 bg-[#022658] rounded-md bg-navy px-6 py-3 font-medium text-[#D3AF34] hover:bg-navy/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2"
+          className="flex items-center gap-2 rounded-md bg-[#022658] px-6 py-3 font-medium text-[#D3AF34] hover:bg-navy/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2 dark:bg-sky-500 dark:text-slate-950 dark:hover:bg-sky-400"
         >
           <Plus className="h-5 w-5" />
           {selectedStage.actionLabel}
@@ -274,7 +274,7 @@ export default function InterestedLeads() {
       </div>
 
       {/* Lead list */}
-      <div className="space-y-4 rounded-xl border border-line p-4 sm:p-5">
+      <div className="space-y-4 rounded-xl border border-line p-4 sm:p-5 dark:border-slate-700 dark:bg-slate-800/40">
         {activeLeads.map((lead) => (
           <LeadCard key={lead.id} lead={lead} stage={selectedStage} />
         ))}
