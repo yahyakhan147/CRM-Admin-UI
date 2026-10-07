@@ -88,12 +88,12 @@ export default function Sidebar({ open, onClose, links = defaultLinks, onLogout 
         <div
           onClick={onClose}
           aria-hidden="true"
-          className="fixed inset-0 z-40 bg-ink/50 md:hidden"
+          className="fixed inset-0 z-40 bg-ink/50 min-[1025px]:hidden"
         />
       )}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex flex-col w-72 shrink-0 rounded-2xl bg-gradient-to-b from-[#002F65] via-[#064385] to-[#0D58A7] text-white/90 px-8 py-6 shadow-[0_20px_60px_rgba(2,6,23,0.45)] transform transition-transform duration-200 ease-out dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 md:static md:translate-x-0 md:flex md:min-h-screen ${open ? "translate-x-0" : "-translate-x-full"}`}
+        className={`fixed inset-y-0 left-0 z-50 flex flex-col w-72 shrink-0 rounded-2xl bg-gradient-to-b from-[#002F65] via-[#064385] to-[#0D58A7] text-white/90 px-8 py-6 shadow-[0_20px_60px_rgba(2,6,23,0.45)] transform transition-transform duration-200 ease-out dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 min-[1025px]:static min-[1025px]:translate-x-0 min-[1025px]:flex min-[1025px]:min-h-screen ${open ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="flex items-center justify-center px-2 mb-8">
           <div className="flex items-center gap-2">
@@ -102,7 +102,7 @@ export default function Sidebar({ open, onClose, links = defaultLinks, onLogout 
           <button
             onClick={onClose}
             aria-label="Close menu"
-            className="md:hidden p-1 text-white/60 hover:text-white dark:text-slate-300 dark:hover:text-white"
+            className="min-[1025px]:hidden p-1 text-white/60 hover:text-white dark:text-slate-300 dark:hover:text-white"
           >
             <X size={24} />
           </button>
