@@ -27,6 +27,7 @@ export default {
         card: "0 1px 2px rgba(18, 23, 43, 0.06), 0 1px 8px rgba(18, 23, 43, 0.04)",
       },
     },
+    
   },
   
   plugins: [require('@tailwindcss/typography')],

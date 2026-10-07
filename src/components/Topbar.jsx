@@ -60,7 +60,7 @@ export default function Topbar({
         <button
           onClick={onMenuClick}
           aria-label="Open menu"
-          className="md:hidden shrink-0 rounded-lg border border-slate-200 bg-white p-2 text-slate-600 shadow-card hover:text-ink dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:text-white"
+          className="min-[1025px]:hidden shrink-0 rounded-lg border border-slate-200 bg-white p-2 text-slate-600 shadow-card hover:text-ink dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:text-white"
         >
           <Menu size={18} />
         </button>

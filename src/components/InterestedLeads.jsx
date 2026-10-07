@@ -247,7 +247,7 @@ export default function InterestedLeads() {
       <hr className="border-line/70 dark:border-slate-700" />
 
       {/* Toolbar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 py-5">
+      <div className="flex flex-wrap items-center justify-between gap-3 py-5 px-2">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted text-[#707EAE] dark:text-slate-300">
           <span className="flex items-center gap-1.5">
             <Users className="h-4 w-4" />

@@ -58,7 +58,7 @@ const EVENTS = {
   12: [["orange", "13:00 (info here)"], ["orange", "13:00 (info here)"]],
   18: [["orange", "21:00 (30 min)"]],
   19: [["green", "13:00 (Team Mtg)"], ["orange", "19:00 (60 min)"]],
-  22: [["orange", "13:00 (info here)"], ["orange", "13:00 (info here)"]],
+  22: [["orange", "13:00 (info here)"], ["orange", "13:00 (info here)"],["orange", "13:00 (info here)"], ["orange", "13:00 (info here)"]],
   25: [["green", "13:00 (60 min)"]],
 };
 const DIMMED = new Set([1]);
@@ -355,7 +355,7 @@ export default function CalendarAppointment( ) {
                       setScheduleIndex(i);
                       setIsAddingTask(false);
                     }}
-                    className={`relative flex h-[125px] cursor-pointer flex-col justify-between border-t border-slate-200 p-3 text-left transition-colors hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:border-slate-700 dark:text-slate-100 ${
+                    className={`relative flex h-[170px] cursor-pointer flex-col justify-between border-t border-slate-200 p-3 text-left transition-colors hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:border-slate-700 dark:text-slate-100 ${
                       i % 7 ? "border-l border-slate-200 dark:border-l dark:border-slate-700" : ""
                     } ${state}`}
                   >
