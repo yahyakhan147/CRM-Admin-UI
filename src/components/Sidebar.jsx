@@ -1,6 +1,17 @@
 import { NavLink } from "react-router-dom";
-import { X, LogOut } from "lucide-react";
-import { useState } from "react";
+import {
+  BookOpen,
+  BarChart3,
+  CalendarCheck,
+  ChevronDown,
+  ClipboardList,
+  ContactRound,
+  GraduationCap,
+  LogOut,
+  Presentation,
+  X,
+} from "lucide-react";
+import { Fragment, useState } from "react";
 
 function DashboardIcon(props) {
   const { size = 24, ...rest } = props;
@@ -16,6 +27,23 @@ function CustomerIcon(props) {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M17 11C19.0871 11 20.9253 12.0656 22.0002 13.6825L21.9993 17H14L13.999 18.952L14.0215 20H2V19C2 15.6863 4.68629 13 8 13C9.37834 13 10.6509 13.4657 11.6662 14.2518C12.662 12.3204 14.6768 11 17 11ZM8 15C6.26204 15 4.78296 16.1084 4.23109 17.6569L4.16936 17.8447L4.126 18H11.873L11.8362 17.8625C11.3827 16.3295 10.0355 15.1846 8.4051 15.0203L8.19987 15.0049L8 15ZM17 13C15.6048 13 14.3764 13.7144 13.6606 14.7973L13.535 15H20.464L20.3707 14.845C19.6927 13.7872 18.5304 13.0708 17.2007 13.005L17 13ZM8 4C10.2091 4 12 5.79086 12 8C12 10.2091 10.2091 12 8 12C5.79086 12 4 10.2091 4 8C4 5.79086 5.79086 4 8 4ZM17 4C18.6569 4 20 5.34315 20 7C20 8.65685 18.6569 10 17 10C15.3431 10 14 8.65685 14 7C14 5.34315 15.3431 4 17 4ZM8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6ZM17 6C16.7239 6 16 6 16 6C16 6 16 6.72386 16 7C16 7.27614 16 8 16 8C16 8 16.7239 8 17 8C17.2761 8 18 8 18 8C18 8 18 7.27614 18 7C18 6.86441 18 6 18 6C18 6 17.1356 6 17 6Z" fill="currentColor"/>
+</svg>
+  );
+}
+function CertificateIcon(props) {
+  const { size = 26, ...rest } = props;
+  return (
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 3.25L15.4917 4.65833L18.3084 4.44167L19.5 7.04167L21.8834 8.55833L21.2334 11.375L21.8834 14.1917L19.5 15.7083L18.3084 18.3083L15.4917 18.0917L13 19.5L10.5084 18.0917L7.6917 18.3083L6.50003 15.7083L4.1167 14.1917L4.7667 11.375L4.1167 8.55833L6.50003 7.04167L7.6917 4.44167L10.5084 4.65833L13 3.25Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" />
+<path d="M9.75 19.4999V22.7499L13 20.7999L16.25 22.7499V19.4999M10.2917 11.3749L12.1333 13.2166L15.925 9.20825" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+</svg>
+  );
+}
+function FundingIcon(props) {
+  const { size = 26, ...rest } = props;
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.66683 10.0833H18.3335M3.66683 10.0833C2.65431 10.0833 1.8335 9.26244 1.8335 8.24992V7.33325C1.8335 6.32073 2.65431 5.49992 3.66683 5.49992H18.3335C19.346 5.49992 20.1668 6.32073 20.1668 7.33325V8.24992C20.1668 9.26244 19.346 10.0833 18.3335 10.0833M3.66683 10.0833L3.66683 18.3333C3.66683 19.3458 4.48764 20.1666 5.50016 20.1666H16.5002C17.5127 20.1666 18.3335 19.3458 18.3335 18.3333V10.0833M11.0002 5.49992H14.6668C15.6794 5.49992 16.5002 4.67911 16.5002 3.66659C16.5002 2.65406 15.6794 1.83325 14.6668 1.83325C12.6418 1.83325 11.0002 3.47487 11.0002 5.49992ZM11.0002 5.49992H7.3335C6.32097 5.49992 5.50016 4.67911 5.50016 3.66659C5.50016 2.65406 6.32097 1.83325 7.3335 1.83325C9.35854 1.83325 11.0002 3.47487 11.0002 5.49992ZM11.0002 5.49992V20.1666" stroke-width="1.5" stroke-linecap="round" stroke="currentColor"/>
 </svg>
   );
 }
@@ -41,6 +69,16 @@ function UsersIcon(props) {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M12.393 3.08026C12.6263 3.17944 12.8122 3.36304 12.9126 3.59335L14.9554 8.27719L20.098 8.74815C20.6445 8.79819 21.0464 9.27618 20.9957 9.81576C20.9722 10.0654 20.8529 10.2968 20.6621 10.4623L16.782 13.828L17.9175 18.8029C18.0382 19.3316 17.702 19.8567 17.1666 19.9758C16.9189 20.031 16.6591 19.9904 16.4408 19.8623L12 17.2586L7.55917 19.8623C7.08728 20.139 6.4776 19.9856 6.19741 19.5196C6.06775 19.304 6.02662 19.0476 6.08245 18.8029L7.21798 13.828L3.33788 10.4623C2.92558 10.1046 2.88497 9.48469 3.24717 9.07757C3.41477 8.88918 3.64907 8.77131 3.90194 8.74815L9.04454 8.27719L11.0873 3.59335C11.3044 3.09565 11.889 2.86593 12.393 3.08026ZM13.5968 10.1236L12 6.46162L10.4031 10.1236L6.38164 10.4914L9.41619 13.1228L8.52801 17.0114L12 14.9764L15.4709 17.0114L14.5838 13.1228L17.6173 10.4914L13.5968 10.1236Z" fill="currentColor"/>
+</svg>
+
+  );
+}
+function ContactBoxIcon(props) {
+  const { size = 18, ...rest } = props;
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="17" r="1" transform="rotate(-180 12 17)" fill="currentColor"/>
+<path d="M12 14L12 7M5.33248 4.71069L10.3708 2.36419C11.4134 1.8786 12.6036 1.8786 13.6462 2.36419L18.6646 4.70139C20.1321 5.38485 21.0953 6.92095 20.9925 8.60032C20.5981 15.0419 18.8406 17.9539 14.0899 21.3322C12.8361 22.2238 11.1823 22.2216 9.92759 21.3315C5.1914 17.9715 3.36871 15.1001 3.00617 8.57773C2.91343 6.90939 3.87515 5.38942 5.33248 4.71069Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
 </svg>
 
   );
@@ -72,15 +110,21 @@ function ChatIcon(props) {
 
 const defaultLinks = [
   { to: "/", label: "Dashboard", icon: DashboardIcon, end: true },
+  { to: "/student-dashboard", label: "Student Dashboard", icon: DashboardIcon, end: true },
+  { to: "/Certificates", label: "Certificates", icon: CertificateIcon},
+  { to: "/Funding", label: "Funding", icon: FundingIcon},
   { to: "/New Customer", label: "New Customer", icon: CustomerIcon },
   { to: "/Participants", label: "Participants", icon: TargetIcon },
   { to: "/Enrollments", label: "Enrollments", icon: UsersIcon },
   { to: "/calendar", label: "Calendar", icon: CalendarIcon },
   { to: "/chat", label: "Chat", icon: ChatIcon },
+  { to: "/ContactBox", label: "Contact Box", icon: ContactBoxIcon },
 ];
 
 export default function Sidebar({ open, onClose, links = defaultLinks, onLogout }) {
   const [lang, setLang] = useState("en");
+  const [coursesOpen, setCoursesOpen] = useState(false);
+  const [learningOpen, setLearningOpen] = useState(false);
   return (
     <>
       {/* Backdrop — only rendered on mobile when menu is open */}
@@ -110,22 +154,167 @@ export default function Sidebar({ open, onClose, links = defaultLinks, onLogout 
 
         <nav className="flex flex-col gap-4">
           {links.map(({ to, label, icon: Icon, end }) => (
-            <NavLink
-              key={to}
-              to={to}
-              end={end}
-              onClick={onClose}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-md text-base font-medium transition-colors ${
-                  isActive
-                    ? "bg-[#D1A41A] text-[#012F65] font-semibold dark:bg-yellow-400 dark:text-slate-950"
-                    : "text-white/60 hover:bg-white/5 hover:text-white dark:text-slate-300 dark:hover:bg-slate-700/60 dark:hover:text-white"
-                }`
-              }
-            >
-              <Icon size={18} className="shrink-0 text-current" />
-              {label}
-            </NavLink>
+            <Fragment key={to}>
+              <NavLink
+                to={to}
+                end={end}
+                onClick={onClose}
+                className={({ isActive }) =>
+                  `flex items-center gap-3 px-3 py-2.5 rounded-md text-base font-medium transition-colors ${
+                    isActive
+                      ? "bg-[#D1A41A] text-[#012F65] font-semibold dark:bg-yellow-400 dark:text-slate-950"
+                      : "text-white/60 hover:bg-white/5 hover:text-white dark:text-slate-300 dark:hover:bg-slate-700/60 dark:hover:text-white"
+                  }`
+                }
+              >
+                <Icon size={18} className="shrink-0 text-current" />
+                {label}
+              </NavLink>
+
+              {to === "/student-dashboard" && (
+                <>
+                <section className="overflow-hidden rounded-md bg-[#0D58A7]">
+                  <button
+                    type="button"
+                    aria-expanded={coursesOpen}
+                    onClick={() => setCoursesOpen((isOpen) => !isOpen)}
+                    className="flex w-full items-center gap-4 bg-[#00386D] px-2 py-3 text-left text-base font-medium text-white/75 transition-colors hover:text-white hover:bg-white/5 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-700/60"
+                  >
+                    <BookOpen size={21} className="shrink-0" />
+                    <span className="flex-1">Courses Area</span>
+                    <ChevronDown
+                      size={18}
+                      className={`shrink-0 transition-transform ${coursesOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+
+                  {coursesOpen && (
+                    <div className="space-y-3 px-0 py-1.5">
+                      <NavLink
+                        to="/my-course"
+                        onClick={onClose}
+                        className={({ isActive }) =>
+                          `flex items-center gap-3 rounded-md px-4 py-3 text-base font-medium transition-colors ${
+                            isActive
+                              ? "bg-[#D1A41A] text-[#012F65]"
+                              : "text-white/65 hover:bg-white/5 hover:text-white"
+                          }`
+                        }
+                      >
+                        <GraduationCap size={23} className="shrink-0" />
+                        My Course
+                      </NavLink>
+                      <NavLink
+                        to="/my-schedule"
+                        onClick={onClose}
+                        className={({ isActive }) =>
+                          `flex items-center gap-3 rounded-md px-4 py-3 text-base font-medium transition-colors ${
+                            isActive
+                              ? "bg-[#D1A41A] text-[#012F65]"
+                              : "text-white/65 hover:bg-white/5 hover:text-white"
+                          }`
+                        }
+                      >
+                        <CalendarCheck size={22} className="shrink-0" />
+                        My Schedule
+                      </NavLink>
+                      <NavLink
+                        to="/Attendance"
+                        onClick={onClose}
+                        className={({ isActive }) =>
+                          `flex items-center gap-3 rounded-md px-4 py-3 text-base font-medium transition-colors ${
+                            isActive
+                              ? "bg-[#D1A41A] text-[#012F65]"
+                              : "text-white/65 hover:bg-white/5 hover:text-white"
+                          }`
+                        }
+                      >
+                        <ClipboardList size={22} className="shrink-0" />
+                        Attendance
+                      </NavLink>
+                    </div>
+                  )}
+                </section>
+                <section className="overflow-hidden rounded-md bg-[#0D58A7]">
+                  <button
+                    type="button"
+                    aria-expanded={learningOpen}
+                    onClick={() => setLearningOpen((isOpen) => !isOpen)}
+                    className="flex w-full items-center gap-4 bg-[#00386D] px-2 py-3 text-left text-base font-medium text-white/75 transition-colors hover:bg-white/5 hover:text-white dark:text-slate-300 dark:hover:bg-slate-700/60 dark:hover:text-white"
+                  >
+                    <BookOpen size={21} className="shrink-0" />
+                    <span className="flex-1">Learning Area</span>
+                    <ChevronDown
+                      size={18}
+                      className={`shrink-0 transition-transform ${learningOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+
+                  {learningOpen && (
+                    <div className="space-y-3 px-0 py-1.5">
+                      <NavLink
+                        to="/exam-simulation"
+                        onClick={onClose}
+                        className={({ isActive }) =>
+                          `flex items-center gap-3 rounded-md px-4 py-3 text-base font-medium transition-colors ${
+                            isActive
+                              ? "bg-[#D1A41A] text-[#012F65]"
+                              : "text-white/65 hover:bg-white/5 hover:text-white"
+                          }`
+                        }
+                      >
+                        <ClipboardList size={22} className="shrink-0" />
+                        Exam Simulation
+                      </NavLink>
+                      <NavLink
+                        to="/practice-exercises"
+                        onClick={onClose}
+                        className={({ isActive }) =>
+                          `flex items-center gap-3 rounded-md px-4 py-3 text-base font-medium transition-colors ${
+                            isActive
+                              ? "bg-[#D1A41A] text-[#012F65]"
+                              : "text-white/65 hover:bg-white/5 hover:text-white"
+                          }`
+                        }
+                      >
+                        <Presentation size={22} className="shrink-0" />
+                        Practices Exercises
+                      </NavLink>
+                      <NavLink
+                        to="/my-progress"
+                        onClick={onClose}
+                        className={({ isActive }) =>
+                          `flex items-center gap-3 rounded-md px-4 py-3 text-base font-medium transition-colors ${
+                            isActive
+                              ? "bg-[#D1A41A] text-[#012F65]"
+                              : "text-white/65 hover:bg-white/5 hover:text-white"
+                          }`
+                        }
+                      >
+                        <BarChart3 size={22} className="shrink-0" />
+                        My Progress
+                      </NavLink>
+                      <NavLink
+                        to="/flash-cards"
+                        onClick={onClose}
+                        className={({ isActive }) =>
+                          `flex items-center gap-3 rounded-md px-4 py-3 text-base font-medium transition-colors ${
+                            isActive
+                              ? "bg-[#D1A41A] text-[#012F65]"
+                              : "text-white/65 hover:bg-white/5 hover:text-white"
+                          }`
+                        }
+                      >
+                        <ContactRound size={22} className="shrink-0" />
+                        Flashcards
+                      </NavLink>
+                    </div>
+                  )}
+                </section>
+                </>
+              )}
+
+            </Fragment>
           ))}
         </nav>
 

@@ -30,13 +30,13 @@ export default function Topbar({
   time = "08:47AM",
   status = "Clocked In",
   avatar = "/assets/images/avatar.png",
-  userName = "Yahya Khan",
+  userName = "Fatima",
   notificationItems = [
     { id: 1, text: "New lead assigned: Sarah K.", time: "2m ago" },
     { id: 2, text: "Appointment confirmed for 10:00", time: "1h ago" },
     { id: 3, text: "BGS #482 is now overdue", time: "3h ago" },
   ],
-  title = "Dashboard",
+  title = "Student Dashboard",
   subtitle = "Monday, 07 Sep 2026",
   onMenuClick,
 }) {
@@ -66,7 +66,7 @@ export default function Topbar({
         </button>
         <div className="min-w-0">
           {userName && (
-            <p className="text-sm font-semibold text-[#707EAE] dark:text-slate-300">Welcome back, <span className="text-ink dark:text-slate-100">{userName}</span></p>
+            <p className="text-sm font-semibold text-[#707EAE] dark:text-slate-300">Good Morning, <span className="dark:text-slate-100 text-primary">{userName}</span></p>
           )}
           <h1 className="font-display text-3xl font-semibold text-ink truncate dark:text-slate-100">{title}</h1>
           {subtitle && <p className="mt-1 truncate text-sm font-semibold text-[#707EAE] dark:text-slate-300">{subtitle}</p>}
