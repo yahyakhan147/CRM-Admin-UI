@@ -72,7 +72,7 @@ backend. Component props are already shaped to accept the same structure.
 
 Hi, I'm Yahya Khan, a [frontend developer / UI designer] who enjoys building clean, practical interfaces. Orbit CRM is a project where I explored dashboard design, component structure, and a consistent design system with React and Tailwind CSS.
 
-- **LinkedIn:** [linkedin.com/in/yahya-khan](https://www.linkedin.com/in/yahya-khan-6a347754/)
-- **Behance:** [behance.net/yahyakhan454cdc](https://www.behance.net/yahyakhan454cdc)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yahya-khan-6a347754)
+[![Behance](https://img.shields.io/badge/Behance-1769FF?style=for-the-badge&logo=behance&logoColor=white)](https://www.behance.net/yahyakhan454cdc)
 
 Feel free to reach out if you'd like to collaborate or have feedback on the project.
