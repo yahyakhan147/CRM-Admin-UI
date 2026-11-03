@@ -67,3 +67,12 @@ crm-app/
 Replace the arrays in `src/data/mockData.js` with API calls (e.g. `fetch` inside
 a `useEffect`, or a data-fetching library like React Query) once you connect a
 backend. Component props are already shaped to accept the same structure.
+
+## About me
+
+Hi, I'm Yahya Khan, a [frontend developer / UI designer] who enjoys building clean, practical interfaces. Orbit CRM is a project where I explored dashboard design, component structure, and a consistent design system with React and Tailwind CSS.
+
+- **LinkedIn:** [linkedin.com/in/yahya-khan](https://www.linkedin.com/in/yahya-khan-6a347754/)
+- **Behance:** [behance.net/yahyakhan454cdc](https://www.behance.net/yahyakhan454cdc)
+
+Feel free to reach out if you'd like to collaborate or have feedback on the project.
